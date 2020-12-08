@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
@@ -35,6 +36,9 @@ class RestaurantListFragment : Fragment() {
         viewModel.data.observe(
             viewLifecycleOwner,
             { restaurants ->
+                if (restaurants.isNotEmpty()) {
+                    binding.listProgress.isVisible = false
+                }
                 adapter.updateItems(restaurants)
             }
         )

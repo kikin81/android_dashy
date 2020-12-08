@@ -3,6 +3,7 @@ package us.kikin.apps.android.doordashy.ui
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import us.kikin.apps.android.doordashy.databinding.ItemRestaurantBinding
 import us.kikin.apps.android.doordashy.model.Restaurant
 
@@ -13,6 +14,7 @@ class RestaurantViewHolder(
     fun bind(item: Restaurant) {
         with(binding) {
             restaurant = item
+            thumbnail.load(item.imageUrl)
         }
     }
 
