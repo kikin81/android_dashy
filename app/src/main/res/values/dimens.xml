@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!--  8dp grid  -->
+    <dimen name="grid_1">8dp</dimen>
+    <dimen name="grid_2">16dp</dimen>
+    <dimen name="grid_3">24dp</dimen>
+    <dimen name="grid_4">32dp</dimen>
+
     <dimen name="thumbnail_width">140dp</dimen>
+
+    <!--  List item  -->
+    <dimen name="item_title_text_size">16sp</dimen>
+    <dimen name="item_subtitle_text_size">14sp</dimen>
+    <dimen name="item_caption_text_size">12sp</dimen>
 </resources>

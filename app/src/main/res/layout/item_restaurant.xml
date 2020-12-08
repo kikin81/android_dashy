@@ -10,62 +10,91 @@
             type="us.kikin.apps.android.doordashy.model.Restaurant" />
     </data>
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        android:focusable="true">
+        android:paddingStart="@dimen/grid_2"
+        android:paddingTop="@dimen/grid_1"
+        android:paddingEnd="@dimen/grid_2"
+        android:paddingBottom="@dimen/grid_1">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/thumbnail"
-                android:layout_width="@dimen/thumbnail_width"
-                android:layout_height="0dp"
-                android:scaleType="fitCenter"
-                android:contentDescription="@string/thumbnail_content_description"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="H,16:9"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:lines="2"
-                android:text="@{restaurant.name}"
-                android:textAppearance="?attr/textAppearanceHeadline6"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/thumbnail"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="Home-Cooked Kitchen" />
+                <ImageView
+                    android:id="@+id/thumbnail"
+                    android:layout_width="@dimen/thumbnail_width"
+                    android:layout_height="0dp"
+                    android:contentDescription="@string/thumbnail_content_description"
+                    android:scaleType="fitCenter"
+                    app:imageUrl="@{restaurant.imageUrl}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="H,16:9"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:lines="2"
-                android:text="@{restaurant.description}"
-                android:textAppearance="?attr/textAppearanceSubtitle1"
-                app:layout_constraintEnd_toStartOf="@id/status"
-                app:layout_constraintStart_toEndOf="@id/thumbnail"
-                app:layout_constraintTop_toBottomOf="@id/name"
-                tools:text="Chinese, Soup" />
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="@dimen/grid_2"
+                    android:layout_marginLeft="@dimen/grid_2"
+                    android:ellipsize="end"
+                    android:gravity="bottom"
+                    android:lines="2"
+                    android:text="@{restaurant.name}"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="@dimen/item_title_text_size"
+                    app:layout_constraintBottom_toTopOf="@id/description"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/thumbnail"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Home-Cooked Kitchen" />
 
-            <TextView
-                android:id="@+id/status"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@{restaurant.status}"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/name"
-                tools:text="22 minutes" />
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:gravity="top"
+                    android:text="@{restaurant.description}"
+                    android:textAppearance="?attr/textAppearanceSubtitle1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/status"
+                    android:textSize="@dimen/item_subtitle_text_size"
+                    android:layout_marginEnd="@dimen/grid_2"
+                    android:layout_marginRight="@dimen/grid_2"
+                    app:layout_constraintStart_toStartOf="@id/name"
+                    app:layout_constraintTop_toBottomOf="@id/name"
+                    tools:text="Chinese, Soup" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:id="@+id/status"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@{restaurant.status}"
+                    android:textAlignment="textEnd"
+                    android:textSize="@dimen/item_caption_text_size"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/name"
+                    tools:text="22 minutes" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
