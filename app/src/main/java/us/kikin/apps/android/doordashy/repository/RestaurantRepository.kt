@@ -9,10 +9,10 @@ class RestaurantRepository @Inject constructor(
 ) {
 
     suspend fun getNearestRestaurants(
-        lat: Long,
-        long: Long
+        lat: Double,
+        long: Double
     ): List<Restaurant> {
         val response = apiService.fetchNearbyRestaurantsForLatLong(lat, long)
-        return response.restaurants.map { Restaurant(it) }
+        return response.map { Restaurant(it) }
     }
 }

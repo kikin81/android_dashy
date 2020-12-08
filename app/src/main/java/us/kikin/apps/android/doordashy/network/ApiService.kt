@@ -8,9 +8,9 @@ interface ApiService {
 
     @GET("restaurant")
     suspend fun fetchNearbyRestaurantsForLatLong(
-        @Query("lat") lat: Long,
-        @Query("lng") long: Long
-    ): RestaurantSearchResponse
+        @Query("lat") lat: Double,
+        @Query("lng") long: Double
+    ): List<RestaurantDto>
 
     @GET("restaurant/{restaurant_id}")
     suspend fun fetchRestaurantById(@Path("restaurant_id") id: Long): RestaurantDto

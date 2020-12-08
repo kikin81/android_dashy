@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="us.kikin.apps.android.doordashy">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".DashyApplication"
         android:allowBackup="false"

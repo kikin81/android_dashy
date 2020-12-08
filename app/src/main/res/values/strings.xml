@@ -3,4 +3,5 @@
 
     <!--  Restaurant list  -->
     <string name="restaurant_list_title">Discover</string>
+    <string name="thumbnail_content_description">Thumbnail</string>
 </resources>
