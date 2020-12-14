@@ -9,5 +9,18 @@
         android:id="@+id/restaurantList"
         android:name="us.kikin.apps.android.doordashy.ui.restaurants.RestaurantListFragment"
         android:label="@string/restaurant_list_title"
-        tools:layout="@layout/fragment_restaurant_list" />
+        tools:layout="@layout/fragment_restaurant_list">
+        <action
+            android:id="@+id/restaurantDetailAction"
+            app:destination="@id/restaurantDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/restaurantDetail"
+        android:name="us.kikin.apps.android.doordashy.ui.restaurantdetail.RestaurantDetail"
+        android:label="fragment_restaurant_detail"
+        tools:layout="@layout/fragment_restaurant_detail">
+        <argument
+            android:name="restaurant_id"
+            app:argType="long" />
+    </fragment>
 </navigation>

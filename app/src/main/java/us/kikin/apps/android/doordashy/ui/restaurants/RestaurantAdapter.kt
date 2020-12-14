@@ -1,10 +1,13 @@
 package us.kikin.apps.android.doordashy.ui.restaurants
 
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import us.kikin.apps.android.doordashy.model.Restaurant
 
-class RestaurantAdapter : RecyclerView.Adapter<RestaurantViewHolder>() {
+class RestaurantAdapter(
+    private val viewModel: RestaurantViewModel
+) : ListAdapter<Restaurant, RestaurantViewHolder>(RestaurantDiffCallback()) {
 
     private val items = ArrayList<Restaurant>()
 
@@ -13,7 +16,7 @@ class RestaurantAdapter : RecyclerView.Adapter<RestaurantViewHolder>() {
 
     override fun onBindViewHolder(holder: RestaurantViewHolder, position: Int) {
         val item = items[position]
-        holder.bind(item)
+        holder.bind(item, viewModel)
     }
 
     override fun getItemCount(): Int = items.size
@@ -22,5 +25,15 @@ class RestaurantAdapter : RecyclerView.Adapter<RestaurantViewHolder>() {
         items.clear()
         items.addAll(newItems)
         notifyDataSetChanged()
+    }
+}
+
+class RestaurantDiffCallback : DiffUtil.ItemCallback<Restaurant>() {
+    override fun areItemsTheSame(oldItem: Restaurant, newItem: Restaurant): Boolean {
+        return oldItem.id == newItem.id
+    }
+
+    override fun areContentsTheSame(oldItem: Restaurant, newItem: Restaurant): Boolean {
+        return oldItem == newItem
     }
 }

@@ -10,8 +10,9 @@ class RestaurantViewHolder(
     private val binding: ItemRestaurantBinding
 ) : RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(item: Restaurant) {
-        with(binding) { restaurant = item }
+    fun bind(item: Restaurant, viewModel: RestaurantViewModel) {
+        binding.restaurant = item
+        binding.viewmodel = viewModel
     }
 
     companion object {
