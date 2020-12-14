@@ -1,14 +1,14 @@
-package us.kikin.apps.android.doordashy.repository
+package us.kikin.apps.android.doordashy.data.source
 
 import us.kikin.apps.android.doordashy.model.Restaurant
 import us.kikin.apps.android.doordashy.network.ApiService
 import javax.inject.Inject
 
-class RestaurantRepository @Inject constructor(
+class DefaultRestaurantRepository @Inject constructor(
     private val apiService: ApiService
-) {
+) : RestaurantRepository {
 
-    suspend fun getNearestRestaurants(
+    override suspend fun getNearestRestaurants(
         lat: Double,
         long: Double
     ): List<Restaurant> {
