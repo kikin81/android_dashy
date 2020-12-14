@@ -1,11 +1,13 @@
 package us.kikin.apps.android.doordashy.ui.restaurants
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import us.kikin.apps.android.doordashy.data.FakeTestRepository
 
+@ExperimentalCoroutinesApi
 class RestaurantViewModelTest {
 
     @get:Rule
@@ -21,9 +23,6 @@ class RestaurantViewModelTest {
     }
 
     @Test
-    fun getRestaurantsNearMe_LoadingEvent() {
-        // When getting restaurants near me
-
-        // Then the loading event is triggered
+    fun getRestaurantsNearMe() {
     }
 }
