@@ -13,16 +13,25 @@ import us.kikin.apps.android.doordashy.model.Restaurant
 @ExperimentalCoroutinesApi
 class RestaurantRepositoryTest {
 
-    private val mcD = Restaurant(
+    private val restaurant1 = Restaurant(
         0L,
         "McDonald's",
         "Fast Food",
+        "",
+        "2 hrs",
+        3
+    )
+
+    private val restaurant2 = Restaurant(
+        1L,
+        "The Melt",
+        "Burgers",
         "",
         "Closed",
         3
     )
 
-    private val restaurantList = listOf(mcD).sortedBy { it.id }
+    private val restaurantList = listOf(restaurant1, restaurant2).sortedBy { it.id }
 
     private lateinit var restaurantRepository: DefaultRestaurantRepository
 
