@@ -1,4 +1,4 @@
-package us.kikin.apps.android.doordashy.ui
+package us.kikin.apps.android.doordashy.ui.restaurants
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

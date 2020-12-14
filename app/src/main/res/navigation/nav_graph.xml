@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/restaurantList"
-        android:name="us.kikin.apps.android.doordashy.ui.RestaurantListFragment"
+        android:name="us.kikin.apps.android.doordashy.ui.restaurants.RestaurantListFragment"
         android:label="@string/restaurant_list_title"
         tools:layout="@layout/fragment_restaurant_list" />
 </navigation>
