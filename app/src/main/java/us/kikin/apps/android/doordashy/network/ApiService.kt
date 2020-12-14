@@ -13,5 +13,5 @@ interface ApiService {
     ): List<RestaurantDto>
 
     @GET("restaurant/{restaurant_id}")
-    suspend fun fetchRestaurantById(@Path("restaurant_id") id: Long): RestaurantDto
+    suspend fun fetchRestaurantById(@Path("restaurant_id") id: Long): RestaurantDto?
 }
