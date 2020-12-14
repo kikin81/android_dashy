@@ -14,6 +14,8 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import us.kikin.apps.android.doordashy.data.source.DefaultRestaurantRepository
+import us.kikin.apps.android.doordashy.data.source.RestaurantRepository
 import us.kikin.apps.android.doordashy.network.ApiService
 import javax.inject.Singleton
 
@@ -73,4 +75,8 @@ class AppModule {
     @Provides
     fun provideApiService(retrofit: Retrofit): ApiService =
         retrofit.create(ApiService::class.java)
+
+    @Provides
+    fun provideRestaurantRepository(api: ApiService): RestaurantRepository =
+        DefaultRestaurantRepository(api)
 }

@@ -1,22 +1,23 @@
 package us.kikin.apps.android.doordashy.ui.restaurants
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import org.junit.runner.RunWith
+import us.kikin.apps.android.doordashy.data.FakeTestRepository
 
-@RunWith(AndroidJUnit4::class)
 class RestaurantViewModelTest {
 
     @get:Rule
     var instantExecutor = InstantTaskExecutorRule()
 
     private lateinit var viewModel: RestaurantViewModel
+    private lateinit var repository: FakeTestRepository
 
     @Before
     fun setupViewModel() {
+        repository = FakeTestRepository()
+        viewModel = RestaurantViewModel(repository)
     }
 
     @Test

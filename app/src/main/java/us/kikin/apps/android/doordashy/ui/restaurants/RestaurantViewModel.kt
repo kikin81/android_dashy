@@ -8,11 +8,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import us.kikin.apps.android.doordashy.data.source.DefaultRestaurantRepository
+import us.kikin.apps.android.doordashy.data.source.RestaurantRepository
 import us.kikin.apps.android.doordashy.model.Restaurant
 
 class RestaurantViewModel @ViewModelInject constructor(
-    private val repository: DefaultRestaurantRepository
+    private val repository: RestaurantRepository
 ) : ViewModel() {
 
     private val _data = MutableLiveData<List<Restaurant>>()
