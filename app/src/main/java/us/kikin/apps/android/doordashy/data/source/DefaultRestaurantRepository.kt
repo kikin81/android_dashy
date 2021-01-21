@@ -15,4 +15,11 @@ class DefaultRestaurantRepository @Inject constructor(
         val response = apiService.fetchNearbyRestaurantsForLatLong(lat, long)
         return response.map { Restaurant(it) }
     }
+
+    // sharedpref id key
+    // value isfavorite
+
+    override fun saveFavoriteToCache(restaurant: Restaurant) {
+        TODO("Not yet implemented")
+    }
 }

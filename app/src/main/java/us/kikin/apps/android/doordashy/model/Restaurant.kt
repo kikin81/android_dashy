@@ -8,14 +8,16 @@ data class Restaurant(
     val description: String,
     val imageUrl: String,
     val status: String,
-    val deliveryFee: Int
+    val deliveryFee: Int,
+    var favorite: Boolean
 ) {
     constructor(dto: RestaurantDto) : this(
         dto.id,
         dto.name,
         dto.description,
-        dto.imageUrl,
+        dto.imageUrl, 
         dto.status,
-        dto.deliveryFee
+        dto.deliveryFee,
+        favorite = false
     )
 }

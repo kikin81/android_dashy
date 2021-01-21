@@ -9,7 +9,7 @@ class RestaurantAdapter(
     private val viewModel: RestaurantViewModel
 ) : ListAdapter<Restaurant, RestaurantViewHolder>(RestaurantDiffCallback()) {
 
-    private val items = ArrayList<Restaurant>()
+    private var items = mutableListOf<Restaurant>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestaurantViewHolder =
         RestaurantViewHolder.from(parent)
@@ -21,9 +21,9 @@ class RestaurantAdapter(
 
     override fun getItemCount(): Int = items.size
 
+    // TODO: list is refreshing
     fun updateItems(newItems: List<Restaurant>) {
-        items.clear()
-        items.addAll(newItems)
+        items = newItems.toMutableList()
         notifyDataSetChanged()
     }
 }

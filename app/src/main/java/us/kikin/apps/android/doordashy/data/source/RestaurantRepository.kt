@@ -8,4 +8,6 @@ interface RestaurantRepository {
         lat: Double,
         long: Double
     ): List<Restaurant>
+
+    fun saveFavoriteToCache(restaurant: Restaurant)
 }
